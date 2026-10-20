@@ -1,0 +1,31 @@
+#
+#	This file is part of the OrangeFox Recovery Project
+# 	Copyright (C) 2019-2020 The OrangeFox Recovery Project
+#	
+#	OrangeFox is free software: you can redistribute it and/or modify
+#	it under the terms of the GNU General Public License as published by
+#	the Free Software Foundation, either version 3 of the License, or
+#	any later version.
+#
+#	OrangeFox is distributed in the hope that it will be useful,
+#	but WITHOUT ANY WARRANTY; without even the implied warranty of
+#	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#	GNU General Public License for more details.
+#
+# 	This software is released under GPL version 3 or any later version.
+#	See <http://www.gnu.org/licenses/>.
+#
+
+
+/boot          emmc  /dev/block/platform/13540000.dwmmc0/by-name/BOOT      flags=display="Boot";backup=1
+/recovery      emmc  /dev/block/platform/13540000.dwmmc0/by-name/RECOVERY  flags=display="Recovery";backup=1
+/system        ext4  /dev/block/platform/13540000.dwmmc0/by-name/SYSTEM    flags=display="System";backup=1
+/system_image  emmc  /dev/block/platform/13540000.dwmmc0/by-name/SYSTEM    flags=display="System image";backup=1;flashimg=1
+/vendor        ext4  /dev/block/platform/13540000.dwmmc0/by-name/VENDOR    flags=display="Vendor";backup=1;wipeingui
+/vendor_image  emmc  /dev/block/platform/13540000.dwmmc0/by-name/VENDOR    flags=display="Vendor image";backup=1;flashimg=1
+/cache         ext4  /dev/block/platform/13540000.dwmmc0/by-name/CACHE     flags=display="Cache"
+/data          ext4  /dev/block/platform/13540000.dwmmc0/by-name/USERDATA  flags=display="Data";fileencryption=aes-256-xts:aes-256-cts:v1
+/efs           ext4  /dev/block/platform/13540000.dwmmc0/by-name/EFS       flags=display="EFS";backup=1
+/preload       ext4  /dev/block/platform/13540000.dwmmc0/by-name/HIDDEN    flags=display="Preload";backup=1
+/sdcard1       auto  /dev/block/mmcblk1p1 /dev/block/mmcblk1 flags=display="Micro SDcard";storage;wipeingui;removable
+/usb-otg       auto  /dev/block/sda1 /dev/block/sda flags=display="USB OTG";storage;wipeingui;removable
